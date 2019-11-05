@@ -39,9 +39,8 @@
           Member：
           %li.header__group__member-list__member
             hogeUser
-      %a{ :href => '' }
-        .header__btn
-          Edit
+      =link_to "", class: "header__btn" do
+        Edit
 
     / 右枠・スクロール領域
     .chats
@@ -76,10 +75,10 @@
     .form
       %form.new_message
         .input-box
-          %input.input-box__text{ :placeholder=>'type a message' }
+          %input.input-box__text{ placeholder: 'type a message' }
           %label.input-box__image
             = fa_icon 'image'
-            %input.input-box__image__file{:type=>'file'}
-        %input.submit-btn{:type => "submit", :value => "Send"}
+            %input.input-box__image__file{type: 'file'}
+        %input.submit-btn{type: "submit", value: "Send"}
 
 
