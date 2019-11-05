@@ -1,0 +1,85 @@
+.body
+  .sideber
+    / 左枠・ヘッダー領域
+    .header
+      .box
+        %p.box__user hogeUser
+        %ul.box__menu
+          %li.box__menu__neew-group
+            = link_to root_path do
+              = fa_icon 'edit'
+          %li.box__menu__edit-user
+            = link_to root_path do
+              = fa_icon 'cog'
+    / 左枠・スクロール領域
+    .groups
+      .group
+        .group__name
+          hogeGroup1
+        .group__text
+          nothing
+      .group
+        .group__name
+          hogeGroup2
+        .group__text
+          nothing
+      .group
+        .group__name
+          hogeGroup3
+        .group__text
+          nothing
+
+  .contents
+    / 右枠・ヘッダー領域
+    .header
+      .header__group
+        .header__group__name
+          hogeConHeader
+        %ul.header__group__member-list
+          Member：
+          %li.header__group__member-list__member
+            hogeUser
+      %a{ :href => '' }
+        .header__btn
+          Edit
+
+    / 右枠・スクロール領域
+    .chats
+      .chat
+        .chat__upbox
+          %p.chat__upbox__user
+            togano
+          %p.chat__upbox__time
+            2019/11/04(Mon) 11:28:58
+        %p.chat__text
+          dsfjaklsdjfl
+
+      .chat
+        .chat__upbox
+          %p.chat__upbox__user
+            hogege
+          %p.chat__upbox__time
+            2019/11/04(Mon) 11:28:58
+        %p.chat__text
+          dsfjaklsdjfl
+
+      .chat
+        .chat__upbox
+          %p.chat__upbox__user
+            hogege
+          %p.chat__upbox__time
+            2019/11/04(Mon) 11:28:58
+        %p.chat__text
+          dsfjaklsdjfl
+
+    / 右枠・入力フォーム
+    .form
+      %form.new_message
+        .input-box
+          %input.input-box__text{ :placeholder=>'type a message' }
+          %label.input-box__image
+            = fa_icon 'image'
+            %input.input-box__image__file{:type=>'file'}
+        %input.submit-btn{:type => "submit", :value => "Send"}
+
+
