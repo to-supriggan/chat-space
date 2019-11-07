@@ -4,7 +4,7 @@
 }
 
 a {
-  color: $color_skyblue;
+  color: $color_white;
   text-decoration: none;
 }
 
@@ -94,6 +94,7 @@ a {
       line-height: 40px;
       padding: 0 20px;
       margin-top: 30px;
+      color: $color_skyblue;
       border: 1px solid $color_skyblue;
       position: absolute;
       right: 40px;

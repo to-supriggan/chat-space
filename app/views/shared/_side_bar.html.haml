@@ -6,25 +6,17 @@
         = current_user.name
       %ul.box__menu
         %li.box__menu__neew-group
-          = link_to root_path do
-            = fa_icon 'edit'
+          = link_to new_group_path do
+            = fa_icon 'pencil-square-o', class: 'icon'
         %li.box__menu__edit-user
           = link_to edit_user_path(current_user) do
-            = fa_icon 'cog'
+            = fa_icon 'cog', class: 'icon'
   / 左枠・スクロール領域
   .groups
-    .group
-      .group__name
-        hogeGroup1
-      .group__text
-        nothing
-    .group
-      .group__name
-        hogeGroup2
-      .group__text
-        nothing
-    .group
-      .group__name
-        hogeGroup3
-      .group__text
-        nothing
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__text
+            メッセージはまだありません。
