@@ -11,7 +11,7 @@
           %li.header__group__member-list__member
             - @group.users.each do |user|
               = user.name
-      =link_to edit_group_path(@group), class: "header__btn" do
+      =link_to edit_group_path(@group), class: "header__btn",data: {"turbolinks" => false} do
         Edit
 
     / 右枠・スクロール領域
