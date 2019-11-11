@@ -45,4 +45,11 @@ $(function(){
       alert('メッセージ送信に失敗しました');
     })
   })
+
+
+  $(document).on('click',"", function(){
+
+    //console.log()でイベント発火の有無を確認しましょう
+  console.log("チャッカマン");
+  });
 });
