@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
     let image = message.image ? `<img class='' src='${message.image}' >` : '';
-    let html =  `<div class='chat'>
+    let html =  `<div class='chat' data-id=` + message.id + `>
                   <div class='chat__upbox'>
                     <p class='chat__upbox__user'>
                       ${message.user_name}
@@ -18,7 +18,7 @@ $(function(){
     return html;
   }
 
-  $('#new_message').on('submit', function(e){
+  $('#new_message').on('submit', function(){
     let url = window.location.href;
     let formData = new FormData(this);
     $.ajax({
@@ -46,10 +46,30 @@ $(function(){
     })
   })
 
-
-  $(document).on('click',"", function(){
-
-    //console.log()でイベント発火の有無を確認しましょう
-  console.log("チャッカマン");
-  });
+  let reloadMessages = function() {
+    if (window.location.pathname.match(/\/groups\/\d+\/messages/)){
+      let last_message_id = $('.chat:last').data('id');
+      let url = 'api/messages';
+      $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
+        let insertHTML = "";
+        messages.forEach(function (message) {
+          insertHTML = buildHTML(message);
+          $('.chats').append(insertHTML);
+        });
+        $('.chats').animate({
+          scrollTop: $('.chats')[0].scrollHeight
+        });
+      })
+      .fail(function() {
+        alert('メッセージ受信に失敗しました');
+      });
+    };
+  };
+  setInterval(reloadMessages, 5000);
 });
