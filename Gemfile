@@ -64,3 +64,6 @@ gem 'mini_magick'
 gem 'rspec-rails'
 gem 'pry-rails'
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
