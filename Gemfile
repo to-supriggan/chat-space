@@ -63,7 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'font-awesome-rails'
 gem 'devise'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave'
 gem 'mini_magick'
 gem 'rspec-rails'
 gem 'pry-rails'
@@ -71,3 +71,4 @@ gem 'pry-rails'
 group :production do
   gem 'unicorn', '5.4.1'
 end
+gem 'fog-aws'
