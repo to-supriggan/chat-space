@@ -18,7 +18,8 @@ $(function(){
     return html;
   }
 
-  $('#new_message').on('submit', function(){
+  $('#new_message').on('submit', function(e){
+    e.preventDefault()
     let url = window.location.href;
     let formData = new FormData(this);
     $.ajax({
