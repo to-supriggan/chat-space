@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/57216305/72060899-3898ef80-3318-11ea-937b-30d7cf94b962.png" max-width="100%;" />
+<img src="https://user-images.githubusercontent.com/57216305/72061095-831a6c00-3318-11ea-9f69-999cceb82f02.png" max-width="100%;" />
 
 
 ## usersテーブル
